@@ -46,7 +46,7 @@ Public Module ModBase
     ''' <summary>
     ''' 包含程序名的完整路径。
     ''' </summary>
-    Public PathWithName As String = Path & AppDomain.CurrentDomain.SetupInformation.ApplicationName
+    Public PathWithName As String = Path & AppDomain.CurrentDomain.SetupInformation.ApplicationBase
     ''' <summary>
     ''' 程序内嵌图片文件夹路径，以“/”结尾。
     ''' </summary>
@@ -608,7 +608,8 @@ Public Module ModBase
                 ReadReg = DefaultValue '不存在则返回默认值
             Else
                 Dim readValue As New Text.StringBuilder
-                readValue.AppendLine(softKey.GetValue(Key))
+                Dim gotValue = softKey.GetValue(Key)
+                readValue.AppendLine(If(gotValue IsNot Nothing, gotValue.ToString, ""))
                 Dim value = readValue.ToString.Replace(vbCrLf, "") '去除莫名的回车
                 Return If(value = "", DefaultValue, value) '错误则返回默认值
             End If

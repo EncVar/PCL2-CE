@@ -651,8 +651,8 @@
                     '发布时间获取
                     Dim ReleaseTimeOriginal = RegexSeek(VersionCode, "(?<=""download-time"" title="")[^""]+")
                     Dim ReleaseTimeSplit = ReleaseTimeOriginal.Split(" -:".ToCharArray) '原格式："2021-02-15 03:24:02"
-                    Dim ReleaseDate As New Date(ReleaseTimeSplit(0), ReleaseTimeSplit(1), ReleaseTimeSplit(2), '年月日
-                                                ReleaseTimeSplit(3), ReleaseTimeSplit(4), ReleaseTimeSplit(5), '时分秒
+                    Dim ReleaseDate As New Date(CInt(ReleaseTimeSplit(0)), CInt(ReleaseTimeSplit(1)), CInt(ReleaseTimeSplit(2)), '年月日
+                                                CInt(ReleaseTimeSplit(3)), CInt(ReleaseTimeSplit(4)), CInt(ReleaseTimeSplit(5)), '时分秒
                                                 0, DateTimeKind.Utc) '以 UTC 时间作为标准
                     Dim ReleaseTime As String = ReleaseDate.ToLocalTime.ToString("yyyy'/'MM'/'dd HH':'mm") '时区与格式转换
                     '分类与 MD5 获取

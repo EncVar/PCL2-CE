@@ -7,6 +7,7 @@ Imports System.Security.Cryptography
 Imports NAudio.Midi
 Imports System.Management
 Imports System
+Imports System.Security.RightsManagement
 
 Friend Module ModSecret
 
@@ -358,7 +359,7 @@ PCL-Community 及其成员与龙腾猫跃无从属关系，且均不会为您的
         IsUpdateWaitingRestart = True
         Try
             Dim fileName As String = Path + "PCL\Plain Craft Launcher 2.exe"
-            Dim text As String = String.Concat(New String() {"--update ", Process.GetCurrentProcess().Id, " """, AppDomain.CurrentDomain.SetupInformation.ApplicationName, """ """, AppDomain.CurrentDomain.SetupInformation.ApplicationName, """ ", TriggerRestartAndByEnd})
+            Dim text As String = String.Concat(New String() {"--update ", Process.GetCurrentProcess().Id, " """, AppDomain.CurrentDomain.SetupInformation.ApplicationBase, """ """, AppDomain.CurrentDomain.SetupInformation.ApplicationBase, """ ", TriggerRestartAndByEnd})
             Log("[System] 更新程序启动，参数：" + text, LogLevel.Normal, "出现错误")
             Process.Start(New ProcessStartInfo(fileName) With {.WindowStyle = ProcessWindowStyle.Hidden, .CreateNoWindow = True, .Arguments = text})
             If TriggerRestartAndByEnd Then

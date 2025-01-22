@@ -1,0 +1,25 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+    <NoWarn>$(NoWarn);NU1507</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageVersion Include="Costura.Fody" Version="6.0.0" />
+    <PackageVersion Include="Dynamicweb.WebP" Version="3.0.0" />
+    <PackageVersion Include="Fody" Version="6.9.1" />
+    <PackageVersion Include="NAudio" Version="2.2.1" />
+    <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageVersion Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
+    <PackageVersion Include="Open.NAT" Version="2.1.0" />
+    <PackageVersion Include="STUN" Version="0.5.0" />
+    <PackageVersion Include="System.Management" Version="9.0.1" />
+    <PackageVersion Include="System.Security.AccessControl" Version="6.0.1" />
+    <PackageVersion Include="System.ServiceModel.Duplex" Version="6.0.0" />
+    <PackageVersion Include="System.ServiceModel.Federation" Version="8.1.1" />
+    <PackageVersion Include="System.ServiceModel.Http" Version="8.1.1" />
+    <PackageVersion Include="System.ServiceModel.NetTcp" Version="8.1.1" />
+    <PackageVersion Include="System.ServiceModel.Primitives" Version="8.1.1" />
+    <PackageVersion Include="System.ServiceModel.Security" Version="6.0.0" />
+  </ItemGroup>
+</Project>

@@ -209,11 +209,11 @@ RequestFinished:
         Try
             If Url.StartsWithF("https", True) Then Request.ProtocolVersion = HttpVersion.Version11
             Request.Timeout = Timeout
+            Request.ReadWriteTimeout = Timeout
             Request.Accept = Accept
             SecretHeadersSign(Url, Request, UseBrowserUserAgent)
             Using res As HttpWebResponse = Request.GetResponse()
                 Using HttpStream As Stream = res.GetResponseStream()
-                    HttpStream.ReadTimeout = Timeout
                     Dim HttpData As Byte() = New Byte(16384) {}
                     Using Reader As New StreamReader(HttpStream, If(Encode, Encoding.UTF8))
                         Dim ResultString As String = Reader.ReadToEnd

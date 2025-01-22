@@ -1,4 +1,6 @@
-﻿Public Class MyListItem
+﻿Imports System.Windows.Markup
+
+Public Class MyListItem
     Implements IMyRadio
 
     Public Event Click(sender As Object, e As MouseButtonEventArgs)
